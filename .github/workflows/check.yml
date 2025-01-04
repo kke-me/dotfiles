@@ -9,9 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: chomod to execution .bin/install.sh
-        run: git update-index --add --chmod=+x .bin/install.sh
-      - name: check mod
-        run: git ls-files -s
+        run: chmod 755 .bin/install.sh
 
   ubuntu:
     runs-on: ubuntu-latest
