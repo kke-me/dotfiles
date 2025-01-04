@@ -3,6 +3,16 @@ name: CI
 on: [push]
 
 jobs:
+  chmod:
+    runs-on: ubuntu-latest
+    container: ubuntu:latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: chomod to execution .bin/install.sh
+        run: git update-index --add --chmod=+x .bin/install.sh
+      - name: check mod
+        run: git ls-files -s
+
   ubuntu:
     runs-on: ubuntu-latest
     container: ubuntu:latest
