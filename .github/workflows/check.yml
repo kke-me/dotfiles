@@ -28,8 +28,8 @@ jobs:
         run: apt-add-repository "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe"
       - name: Regist pub-key
         run: |
-          gpg --recv-key --keyserver ipv4.pool.sks-keyservers.net 40976EAF437D05B5
-          gpg --recv-key --keyserver ipv4.pool.sks-keyservers.net 3B4FE6ACC0B21F32
+          gpg --recv-key --keyserver hkp://keys.gnupg.net 40976EAF437D05B5
+          gpg --recv-key --keyserver hkp://keys.gnupg.net 3B4FE6ACC0B21F32
       - name: Regist pub-key2
         run: |
           gpg -a --export 40976EAF437D05B5 | sudo gpg add -
