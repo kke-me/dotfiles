@@ -32,8 +32,8 @@ jobs:
           gpg --recv-key --keyserver hkp://keys.gnupg.net 3B4FE6ACC0B21F32
       - name: Regist pub-key2
         run: |
-          gpg -a --export 40976EAF437D05B5 | sudo gpg add -
-          gpg -a --export 3B4FE6ACC0B21F32 | sudo gpg add -
+          gpg -a --export 40976EAF437D05B5 | sudo apt-key add -
+          gpg -a --export 3B4FE6ACC0B21F32 | sudo apt-key add -
       - name: Install required packages
         run: apt-get update; apt-get install -y shellcheck
       - name: Execute shellcheck
