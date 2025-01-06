@@ -65,3 +65,5 @@
 !/LICENSE
 !.gitignore
 !.gitkeep
+
+!.ghostty
