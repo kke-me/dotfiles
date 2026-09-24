@@ -67,3 +67,8 @@
 !.gitkeep
 
 !.ghostty
+
+!/.agents/
+!/.agents/**
+!/docs/
+!/docs/**
