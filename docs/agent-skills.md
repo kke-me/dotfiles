@@ -19,10 +19,10 @@ git clone git@github.com:kke-me/dotfiles.git ~/Documents/dev/dotfiles
 ~/Documents/dev/dotfiles/.bin/install.sh
 ```
 
-`install.sh` は次をする。
+`install.sh` は次の2つだけを symlink する。`~/.claude` 本体は消さない。実ディレクトリがある場合は `~/.dotbackup/` へ退避してから張り替える。
 
-1. リポジトリ直下のドットファイルを `$HOME` へ symlink する。`.agents` もここに含まれる。
-2. `~/.claude` は消さない。`~/.claude/skills` が実ディレクトリなら `~/.dotbackup/claude-skills.bak` へ退避してから、`~/.agents/skills` への symlink に置き換える。
+1. `~/.agents` → このリポジトリの `.agents`
+2. `~/.claude/skills` → `~/.agents/skills`
 
 確認:
 
@@ -88,8 +88,6 @@ ln -sfn ../.agents/skills .claude/skills
 ## Devin
 
 組織の接続リポジトリに `kke-me/dotfiles` を追加する。Devin は接続リポジトリの `.agents/skills/*/SKILL.md` をインデックスし、セッション開始時から名前と description を見る。
-
-このリポジトリにはシェル設定も入っている。Skill 以外を Devin に読ませたくなくなったら、`.agents/skills/` だけを別リポジトリへ切り出し、`install.sh` のリンク先をそちらに変える。それまでは分けない。
 
 ## 同期しないもの
 
