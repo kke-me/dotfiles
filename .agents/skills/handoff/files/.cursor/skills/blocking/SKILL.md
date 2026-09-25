@@ -1,16 +1,16 @@
 ---
 name: blocking
 description: >-
-  Shows or sets BLOCKING.md, the barrier that stops the current work. Use when
-  the user says /blocking.
+  Shows or sets handoff/BLOCKING.md, the barrier that stops the current work.
+  Use when the user says /blocking.
 disable-model-invocation: true
 ---
 
 # blocking
 
-リポジトリ直下の `BLOCKING.md` を扱う。作業を終えるのを妨げている項目だけを置く。経緯は書かない。`log.jsonl` は読まない。
+`handoff/BLOCKING.md` を扱う。リポジトリ直下や `docs/` には書かない。作業を終えるのを妨げている項目だけを置く。経緯は書かない。`handoff/log.jsonl` は読まない。
 
-ファイルが無ければ `なし` の 1 行で作る。git リポジトリなら `.git/info/exclude` に `/BLOCKING.md` を足し、ステージしない。
+ファイルが無ければ `なし` の 1 行で `handoff/BLOCKING.md` を作る。git リポジトリなら `.git/info/exclude` に `/handoff/` を足し、ステージしない。
 
 引数が無ければ、ファイルの内容をそのまま返す。
 

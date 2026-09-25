@@ -1,16 +1,16 @@
 ---
 name: state
 description: >-
-  Shows or updates the repo-root STATE.md handoff, current work and next work
-  only. Use when the user says /state.
+  Shows or updates handoff/STATE.md, current work and next work only. Use when
+  the user says /state.
 disable-model-invocation: true
 ---
 
 # state
 
-リポジトリ直下の `STATE.md` だけを扱う。完了済みは書かない。100 行未満に保つ。`log.jsonl` は読まない。`AGENTS.md`、スキル、`docs/` にセッションログを書かない。
+`handoff/STATE.md` だけを扱う。リポジトリ直下や `docs/` には書かない。完了済みは書かない。100 行未満に保つ。`handoff/log.jsonl` は読まない。`AGENTS.md`、スキル、`docs/` にセッションログを書かない。
 
-ファイルが無ければ、次の内容で作る。git リポジトリなら `.git/info/exclude` に `/STATE.md` を足し、ステージしない。
+ファイルが無ければ、次の内容で `handoff/STATE.md` を作る。git リポジトリなら `.git/info/exclude` に `/handoff/` を足し、ステージしない。
 
 ```markdown
 # 今

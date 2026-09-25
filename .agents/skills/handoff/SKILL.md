@@ -1,16 +1,19 @@
 ---
 name: handoff
 description: >-
-  Installs untracked handoff files into the current git repository. Creates
-  STATE.md, BLOCKING.md, HUMAN.md, and the kickoff, state, blocking, and human
-  skills, then lists them in .git/info/exclude. Use when the user says /handoff.
+  Installs an untracked handoff/ directory into the current git repository.
+  It holds STATE.md, BLOCKING.md, HUMAN.md, and log.jsonl, plus the kickoff,
+  state, blocking, and human skills. Lists handoff/ in .git/info/exclude.
+  Use when the user says /handoff.
 disable-model-invocation: true
 triggers: ["user"]
 ---
 
 # handoff
 
-現在の git リポジトリに、手渡し用のファイルを置く。既存ファイルは上書きしない。`git add` もコミットもしない。`.gitignore` は変更しない。
+現在の git リポジトリに、手渡し用のディレクトリを置く。既存ファイルは上書きしない。`git add` もコミットもしない。`.gitignore` は変更しない。
+
+置く場所はリポジトリ直下の `handoff/` だけ。中身は `STATE.md`、`BLOCKING.md`、`HUMAN.md`、`log.jsonl`。`docs/` やリポジトリ直下の同名ファイルは作らない。`.git/info/exclude` には `/handoff/` を足す。
 
 この SKILL.md があるディレクトリで、次を実行する。
 
