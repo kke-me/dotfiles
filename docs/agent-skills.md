@@ -50,12 +50,13 @@ Cursor では `/skills` が、この一覧と同じ個人スキルと、今開�
 .agents/skills/<skill-name>/SKILL.md
 ```
 
-`name` はディレクトリ名と一致させる。小文字・数字・ハイフンのみ。
+`name` はディレクトリ名と一致させる。小文字・数字・ハイフンのみ。`description` はエージェントがスキルを選ぶ英語。`/skills` が出す日本語は `ja` に書く。`ja` が無ければ `/skills` は `description` を出す。
 
 ```markdown
 ---
 name: skill-name
-description: 何をするかと、いつ使うか。三人称で、トリガーになる語を入れる。
+description: What it does, and when to use it. Third person, with the trigger words.
+ja: 何をするかと、いつ使うか。
 ---
 
 # 手順

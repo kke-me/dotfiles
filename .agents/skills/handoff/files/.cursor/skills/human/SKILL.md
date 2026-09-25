@@ -1,6 +1,9 @@
 ---
 name: human
-description: handoff/HUMAN.md を表示する。引数があれば人間がやる項目を足し、完了した項目は消す。/human と言うときに使う。
+description: >-
+  Shows or sets handoff/HUMAN.md, the list of tasks only the human may do. Use
+  when the user says /human.
+ja: handoff/HUMAN.md を表示する。引数があれば人間がやる項目を足し、完了した項目は消す。/human と言うときに使う。
 disable-model-invocation: true
 ---
 

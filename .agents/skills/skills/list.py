@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 
-def description(path: Path) -> str:
+def field(path: Path, key: str) -> str:
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---"):
         return ""
@@ -17,19 +17,24 @@ def description(path: Path) -> str:
     lines = text[3:end].splitlines()
     chunks: list[str] = []
     capturing = False
+    prefix = f"{key}:"
     for line in lines:
         if capturing:
             if line.startswith((" ", "\t")):
                 chunks.append(line.strip())
                 continue
             break
-        if line.startswith("description:"):
+        if line.startswith(prefix):
             rest = line.split(":", 1)[1].strip()
             if rest in {">-", ">", "|"}:
                 capturing = True
                 continue
             return rest.strip("\"'")
     return " ".join(chunks)
+
+
+def listing(path: Path) -> str:
+    return field(path, "ja") or field(path, "description")
 
 
 def registered(root: Path) -> list[tuple[str, str, Path]]:
@@ -39,7 +44,7 @@ def registered(root: Path) -> list[tuple[str, str, Path]]:
     for child in sorted(root.iterdir(), key=lambda p: p.name):
         skill = child / "SKILL.md"
         if child.is_dir() and skill.is_file():
-            found.append((child.name, description(skill), skill))
+            found.append((child.name, listing(skill), skill))
     return found
 
 

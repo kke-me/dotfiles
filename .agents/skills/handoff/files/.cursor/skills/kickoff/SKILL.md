@@ -1,6 +1,10 @@
 ---
 name: kickoff
-description: AGENTS.md と handoff/STATE.md を読み、次の作業1件に範囲を固定して着手する。/kickoff と言うとき、または handoff/STATE.md から作業を始めたいときに使う。
+description: >-
+  Reads AGENTS.md and handoff/STATE.md, locks the session to the single next
+  task, and starts it. Use when the user says /kickoff or asks to start from
+  handoff/STATE.md.
+ja: AGENTS.md と handoff/STATE.md を読み、次の作業1件に範囲を固定して着手する。/kickoff と言うとき、または handoff/STATE.md から作業を始めたいときに使う。
 disable-model-invocation: true
 ---
 

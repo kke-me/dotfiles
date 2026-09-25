@@ -6,7 +6,7 @@ Cursor / Claude Code / Devin で共有する Agent Skill の正本。
 
 ## 登録されている Skill
 
-`/skills` を、このリポジトリをカレントにして実行した personal の一覧。説明文は各 `SKILL.md` の `description`。今開いている別リポジトリの Skill は、そこでもう一度 `/skills` を実行すると repo の節に出る。
+`/skills` を、このリポジトリをカレントにして実行した personal の一覧。出る文は各 `SKILL.md` の `ja`。`description` はエージェント向けに英語のまま。今開いている別リポジトリの Skill は、そこでもう一度 `/skills` を実行すると repo の節に出る。
 
 - `/handoff`。現在の git リポジトリ直下に、git で追跡しない handoff/ を置く。中身は STATE.md、BLOCKING.md、HUMAN.md、log.jsonl と、kickoff、state、blocking、human のスキル。.git/info/exclude に /handoff/ を足す。/handoff と言うときに使う。
 - `/pr-summary`。Git差分やユーザーが提示した変更内容を分析し、一定のフォーマットで日本語のPR概要を作成する。PR本文を準備するときに明示的に使用する。
