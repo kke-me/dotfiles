@@ -42,7 +42,7 @@ disable-model-invocation: true
 なし
 ```
 
-`HANDOFF/BLOCKING.md` と `HANDOFF/HUMAN.md` の初期値は `なし` の 1 行。
+`HANDOFF/BLOCKING.md` と `HANDOFF/HUMAN.md` の初期値は `なし` の 1 行。`HANDOFF/log.jsonl` は空で作る。
 
 ## 着手の条件
 
