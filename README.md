@@ -14,7 +14,7 @@ Cursor、Claude Code、Devin で使う Agent Skill の正本。初めての端�
 - `/pr-summary`。Git差分やユーザーが提示した変更内容を分析し、一定のフォーマットで日本語のPR概要を作成する。PR本文を準備するときに明示的に使用する。
 - `/skills`。このユーザーと、今開いているリポジトリに登録されているスキルを一覧する。/skills と言うとき、または登録済みのスキルを確認したいときに使う。
 
-## 拾ってきた Skill
+## ありがたく利用させていただいている Skill
 
 実体は `vendor/<name>/`。`.agents/skills/<name>` はそこへの相対 symlink で、ツールはこちらを読む。
 
