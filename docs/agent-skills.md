@@ -96,7 +96,7 @@ ln -sfn ../.agents/skills .claude/skills
 
 Skill 以外の設定は形式が違うので、この仕組みでは揃えない。
 
-- Cursor Rules、Claude の `CLAUDE.md` / rules、Devin の Knowledge と Playbook
+- Cursor Rules、Claude の `CLAUDE.md` / rules、Devin の Knowledge と Playbook。pstack のモデル割り当ても Cursor Rule なので同期しない。写しは [pstack/README.md](../pstack/README.md)
 - MCP。Claude は JSON、他ツールは別ファイル
 - hooks、サブエージェント定義
 

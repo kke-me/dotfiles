@@ -4,6 +4,8 @@ Cursor / Claude Code / Devin で共有する Agent Skill の正本。
 
 手順は [docs/agent-skills.md](docs/agent-skills.md)。
 
+pstack のコマンドと、いまのモデル割り当ては [pstack/README.md](pstack/README.md)。
+
 ## 登録されている Skill
 
 `/skills` を、このリポジトリをカレントにして実行した personal の一覧。出る文は各 `SKILL.md` の `ja`。`description` はエージェント向けに英語のまま。今開いている別リポジトリの Skill は、そこでもう一度 `/skills` を実行すると repo の節に出る。
