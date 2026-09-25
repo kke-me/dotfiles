@@ -32,6 +32,8 @@ readlink ~/.claude/skills
 ls ~/.agents/skills
 ```
 
+Cursor では `/skills` が、この一覧と同じ個人スキルと、今開いているリポジトリのスキルを出す。別のリポジトリへ手渡し用のファイルを置くときは `/handoff` を1回使う。置いたファイルは、そのリポジトリの `.git/info/exclude` に入り、git では追跡しない。
+
 期待する状態:
 
 ```text

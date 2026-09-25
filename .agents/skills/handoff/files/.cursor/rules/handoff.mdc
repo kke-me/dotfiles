@@ -1,0 +1,15 @@
+---
+description: セッションの手渡し。STATE.md の今と次だけを使う。このファイルは git で追跡しない。
+alwaysApply: true
+---
+
+# 手渡し
+
+セッションの作業ログ、完了一覧、決定の経緯を `AGENTS.md`、スキル、`docs/` に書かない。
+
+- `STATE.md` は 100 行未満にする。「今」と「次」だけを書く。完了済みは書かない。
+- 作業を終える前に「次」を、次のエージェントがログを読まずに着手できる一文にする。無ければ `なし` と書く。
+- `BLOCKING.md` は、作業を終えるのを妨げる項目だけにする。無ければ `なし`。`なし` でないあいだ実装を始めない。
+- `HUMAN.md` は、人間がやる項目だけにする。エージェントはその項目を実行しない。無ければ `なし`。
+- 経緯が必要なら `log.jsonl` に 1 行足す。実装中は読まない。レビューのときだけ読む。
+- 手順は `.cursor/skills/kickoff/SKILL.md`、`.cursor/skills/state/SKILL.md`、`.cursor/skills/blocking/SKILL.md`、`.cursor/skills/human/SKILL.md`。
