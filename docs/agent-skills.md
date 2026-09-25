@@ -1,6 +1,8 @@
-# Skill は `.agents/skills/` に1つだけ置く
+# ツールが見るのは `.agents/skills/` の直下だけ
 
-Cursor、Claude Code、Devin で同じ Skill を使うときの正本は、このリポジトリの `.agents/skills/`。形式は [Agent Skills](https://agentskills.io) の `SKILL.md`。3つのツールは同じファイルを読み、探しに行くディレクトリだけが違う。
+Cursor、Claude Code、Devin で同じ Skill を使う。形式は [Agent Skills](https://agentskills.io) の `SKILL.md`。3つのツールは同じファイルを読み、探しに行くディレクトリだけが違う。
+
+自分で書いた Skill の実体は `.agents/skills/<name>/`。拾ってきた Skill の実体は `vendor/<name>/` で、`.agents/skills/<name>` から相対 symlink する。中身は1つ。ツールは直下のディレクトリしか見ないので、`vendor/` に置いただけでは見つからない。
 
 初めての端末は「新しい端末では clone してから install.sh」までやれば使える。Skill の追加、Devin、同期しないものは、必要になった章だけ開く。用語は末尾にある。このファイルと `.bin/install.sh` が食い違ったら、`install.sh` を正にする。
 
@@ -82,11 +84,21 @@ triggers: ["user"]
 
 Devin は同時に有効にできる Skill が1つだけなので、Skill の本文から別の Skill を呼ぶ手順は書かない。本文では Claude 専用の `${CLAUDE_SKILL_DIR}` や、実行時に展開される動的コマンドを使わない。スクリプトを同梱するときは、Skill ディレクトリからの相対パスで書く。
 
+## 拾ってきた Skill は `vendor/` に置く
+
+他の人の Skill を持ってくるときは、実体を `vendor/<name>/` に置く。`.agents/skills/<name>` からは相対 symlink を張る。リンク先はリポジトリの中に留める。
+
+```sh
+ln -s ../../vendor/<name> .agents/skills/<name>
+```
+
+README では「自分で書いた Skill」と「拾ってきた Skill」の見出しを分ける。`/skills` の出力は分かれて出ない。ツールからはどちらも `.agents/skills/` の直下に見える。
+
 ### natural-japanese は coji の著作を参考にした写し
 
-出典は [coji/natural-japanese](https://github.com/coji/natural-japanese)。`skills/natural-japanese` を、コミット `9a78a42` の時点でこのリポジトリに置いてある。著作権は `Copyright (c) 2026 coji`。MIT で、許諾文の全文は `.agents/skills/natural-japanese/LICENSE` にある。写しやその一部を再配布するときは、この著作権表示と `LICENSE` を外さない。人が読む出典は同じディレクトリの `NOTICE`。
+出典は [coji/natural-japanese](https://github.com/coji/natural-japanese)。`skills/natural-japanese` を、コミット `9a78a42` の時点で `vendor/natural-japanese/` に置いてある。`.agents/skills/natural-japanese` はそこへの相対 symlink。著作権は `Copyright (c) 2026 coji`。MIT で、許諾文の全文は `vendor/natural-japanese/LICENSE` にある。写しやその一部を再配布するときは、この著作権表示と `LICENSE` を外さない。人が読む出典は同じディレクトリの `NOTICE`。
 
-このリポジトリで変えたのは `SKILL.md` の `ja` だけ。`LICENSE` は upstream のリポジトリ直下から、写しに添付するために移した。上げ直すときは upstream の同じパスでディレクトリを置き換え、`ja`、`LICENSE`、`NOTICE` は残す。`NOTICE` のコミット番号もそのとき合わせる。`scripts/__pycache__` は入れない。`uv` は同梱していない。lint を回す端末では別に入れる。Cursor では `cursor/natural-japanese.mdc` が、日本語の文章の前にこの Skill を読ませる。このルールの文面はこちらのもので、upstream のファイルではない。
+このリポジトリで変えたのは `SKILL.md` の `ja` だけ。`LICENSE` は upstream のリポジトリ直下から、写しに添付するために移した。上げ直すときは `vendor/natural-japanese/` を upstream の同じパスで置き換え、`ja`、`LICENSE`、`NOTICE`、`.agents/skills/` の symlink は残す。`NOTICE` のコミット番号もそのとき合わせる。`scripts/__pycache__` は入れない。`uv` は同梱していない。lint を回す端末では別に入れる。Cursor では `cursor/natural-japanese.mdc` が、日本語の文章の前に `~/.agents/skills/natural-japanese/SKILL.md` を読ませる。このルールの文面はこちらのもので、upstream のファイルではない。
 
 ## そのリポジトリでしか意味がない手順は、そこに置く
 
@@ -118,6 +130,6 @@ Playbook は Devin の UI にある、組織で共有するプロンプトの雛
 | 用語 | ここでは |
 |---|---|
 | Skill | `SKILL.md` を持つ作業手順。エージェントが名前と description を見て開く |
-| 正本 | 編集する実体。このリポジトリの `.agents/skills/` |
+| 正本 | 編集する実体。自分で書いた Skill は `.agents/skills/`。拾ってきた Skill は `vendor/` |
 | `ja` | `/skills` が一覧に出す日本語。`description` はエージェントが選ぶとき用で、英語のまま残す |
 | Playbook | Devin の UI 上の雛形。Skill とは別に置く |
