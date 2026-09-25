@@ -31,6 +31,11 @@ sync_rule="$HOME/.cursor/rules/pstack-sync.mdc"
 backup_existing "$sync_rule" "pstack-sync"
 command ln -sfn "$root/pstack/pstack-sync.mdc" "$sync_rule"
 
+nj_rule="$HOME/.cursor/rules/natural-japanese.mdc"
+backup_existing "$nj_rule" "natural-japanese"
+command ln -sfn "$root/cursor/natural-japanese.mdc" "$nj_rule"
+
 command echo "linked $agents -> $root/.agents"
 command echo "linked $claude_skills -> $agents/skills"
 command echo "linked $sync_rule -> $root/pstack/pstack-sync.mdc"
+command echo "linked $nj_rule -> $root/cursor/natural-japanese.mdc"

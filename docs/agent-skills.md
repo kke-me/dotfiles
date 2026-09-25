@@ -64,6 +64,8 @@ ja: 何をするかと、いつ使うか。
 
 コミットして push し、他の端末で `git pull` する。
 
+`natural-japanese` は [coji/natural-japanese](https://github.com/coji/natural-japanese) の `skills/natural-japanese` を `9a78a42` でこのリポジトリに置いている。足したのは `ja` と、同梱の `LICENSE` だけ。上げ直すときはそのディレクトリを upstream の同じパスで置き換え、`ja` と `LICENSE` を残す。`scripts/__pycache__` は入れない。`uv` は Skill に入っていない。lint を回す端末では別途入れる。
+
 明示したときだけ動かしたい Skill は、次の2つを両方書く。Cursor と Claude Code は上、Devin は下を見る。
 
 ```yaml
@@ -96,7 +98,9 @@ ln -sfn ../.agents/skills .claude/skills
 
 Skill 以外の設定は形式が違うので、この仕組みでは揃えない。
 
-- Cursor Rules、Claude の `CLAUDE.md` / rules、Devin の Knowledge と Playbook。pstack のモデル割り当て `pstack-models.mdc` も同期しない。例外は `pstack-sync.mdc` だけで、`install.sh` が `~/.cursor/rules/pstack-sync.mdc` へ symlink する。表の生成は [pstack/sync-models.py](../pstack/sync-models.py)
+- Cursor Rules、Claude の `CLAUDE.md` / rules、Devin の Knowledge と Playbook。pstack のモデル割り当て `pstack-models.mdc` も同期しない。例外は2つで、どちらも `install.sh` が `~/.cursor/rules/` へ symlink する。
+  - `pstack/pstack-sync.mdc` → `~/.cursor/rules/pstack-sync.mdc`。表の生成は [pstack/sync-models.py](../pstack/sync-models.py)
+  - `cursor/natural-japanese.mdc` → `~/.cursor/rules/natural-japanese.mdc`。日本語の文章を書くときに [natural-japanese](https://github.com/coji/natural-japanese) をクイックで読ませる
 - MCP。Claude は JSON、他ツールは別ファイル
 - hooks、サブエージェント定義
 
