@@ -96,7 +96,7 @@ ln -sfn ../.agents/skills .claude/skills
 
 Skill 以外の設定は形式が違うので、この仕組みでは揃えない。
 
-- Cursor Rules、Claude の `CLAUDE.md` / rules、Devin の Knowledge と Playbook。pstack のモデル割り当ても Cursor Rule なので同期しない。写しは [pstack/README.md](../pstack/README.md)
+- Cursor Rules、Claude の `CLAUDE.md` / rules、Devin の Knowledge と Playbook。pstack のモデル割り当て `pstack-models.mdc` も同期しない。例外は `pstack-sync.mdc` だけで、`install.sh` が `~/.cursor/rules/pstack-sync.mdc` へ symlink する。表の生成は [pstack/sync-models.py](../pstack/sync-models.py)
 - MCP。Claude は JSON、他ツールは別ファイル
 - hooks、サブエージェント定義
 

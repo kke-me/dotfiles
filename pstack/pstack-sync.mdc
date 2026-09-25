@@ -1,0 +1,14 @@
+---
+description: /setup-pstack のあと、dotfiles のモデル表を生成し直す。
+alwaysApply: true
+---
+
+# pstack の表を写す
+
+`~/.cursor/rules/pstack-models.mdc` を書いたら、同じ作業で次を実行する。`/setup-pstack` の確認より前に行う。
+
+```bash
+python3 ~/.agents/../pstack/sync-models.py
+```
+
+`pstack/README.md` が変わったら、dotfiles のリポジトリでそのファイルだけを commit し、`origin` に push する。表は手で直さない。スクリプトが無い、または終了コードが 0 でないときは、出た文を返して止まる。

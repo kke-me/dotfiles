@@ -1,18 +1,23 @@
 # pstack
 
-プラグイン `~/.cursor/plugins/local/pstack` のコマンドと、この端末のモデル割り当て。2026-09-25 の写し。
+プラグイン `~/.cursor/plugins/local/pstack` のコマンドと、この端末のモデル割り当て。
 
-ライブの割り当ては `~/.cursor/rules/pstack-models.mdc`。`install.sh` は `~/.cursor` を同期しない。`/setup-pstack` をやり直したら、このファイルの表も直す。頼まれない限り `/setup-pstack` は再実行しない。
+ライブの割り当ては `~/.cursor/rules/pstack-models.mdc`。予算と役割の表は `pstack/sync-models.py` がそこから書く。`/setup-pstack` の最後に実行する。頼まれない限り `/setup-pstack` は再実行しない。
 
 ## チャット欄とサブエージェント
 
-チャット欄で選んだモデルは、その会話の親だけに効く。下の表は pstack が起動するサブエージェントのモデル。`inherit-parent` か `auto` と書いた役割は親と同じモデルになる。今のルールファイルにその2つは無い。
+チャット欄で選んだモデルは、その会話の親だけに効く。下の表は pstack が起動するサブエージェントのモデル。`inherit-parent` か `auto` と書いた役割は親と同じモデルになる。
 
 ## 予算
 
-`medium (high)`。量の多い実装は Grok と Composer。判断は Opus。Fast は書いていない。Fast は料金が2倍になり、品質は上がらない。
+量の多い実装は Grok と Composer。判断は Opus。Fast は書いていない。Fast は料金が2倍になり、品質は上がらない。
 
 Opus は Other Models の従量になる。実装の既定を Opus に寄せない。
+
+<!-- models:start -->
+この表の予算は `medium (high)`。2026-09-25 に `~/.cursor/rules/pstack-models.mdc` から生成した。
+
+今のルールに `inherit-parent` と `auto` は無い。
 
 ## 役割
 
@@ -30,11 +35,12 @@ Opus は Other Models の従量になる。実装の既定を Opus に寄せな�
 | why synthesizer | `claude-opus-5-5-high` | `/why` のまとめ |
 | reflect tooling | `composer-2.5` | `/reflect` のツール側 |
 | reflect judgment, divergent, synthesizer | `claude-opus-5-5-high` | `/reflect` の判断 |
-| arena runners | `grok-4.7-high`, `composer-2.5` | `/arena` の候補。2体 |
+| arena runners | `grok-4.7-high`, `composer-2.5` | `/arena` の候補。エントリの数が体の数 |
 | arena cross-judge pool | `claude-opus-5-5-high`, `grok-4.7-high` | 親と別ファミリーを1つ選ぶ |
 | swarm workers | `composer-2.5` | `/swarm` の作業者 |
-| architect runners | `claude-opus-5-5-high`, `grok-4.7-high` | `/architect` の並列。2体 |
-| interrogate reviewers | `claude-opus-5-5-high`, `grok-4.7-high` | `/interrogate` のレビューア。2体 |
+| architect runners | `claude-opus-5-5-high`, `grok-4.7-high` | `/architect` の並列。エントリの数が体の数 |
+| interrogate reviewers | `claude-opus-5-5-high`, `grok-4.7-high` | `/interrogate` のレビューア。エントリの数が体の数 |
+<!-- models:end -->
 
 行を消すと、その役割はスキル側の既定に戻る。
 

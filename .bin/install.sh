@@ -26,5 +26,11 @@ command mkdir -p "$HOME/.claude"
 backup_existing "$claude_skills" "claude-skills"
 command ln -sfn "$agents/skills" "$claude_skills"
 
+command mkdir -p "$HOME/.cursor/rules"
+sync_rule="$HOME/.cursor/rules/pstack-sync.mdc"
+backup_existing "$sync_rule" "pstack-sync"
+command ln -sfn "$root/pstack/pstack-sync.mdc" "$sync_rule"
+
 command echo "linked $agents -> $root/.agents"
 command echo "linked $claude_skills -> $agents/skills"
+command echo "linked $sync_rule -> $root/pstack/pstack-sync.mdc"
