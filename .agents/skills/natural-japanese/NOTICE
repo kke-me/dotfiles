@@ -1,0 +1,9 @@
+# 出典
+
+このディレクトリは [coji/natural-japanese](https://github.com/coji/natural-japanese) の `skills/natural-japanese` を参考にし、コミット `9a78a42` の時点のファイルを置いた写しである。
+
+Copyright (c) 2026 coji
+
+MIT License。著作権表示と許諾文の全文は、同じディレクトリの `LICENSE` にある。写しやその一部を再配布するときは、`Copyright (c) 2026 coji` と `LICENSE` を外さない。
+
+このリポジトリで変えたのは `SKILL.md` の `ja` だけである。それ以外のファイルは上記コミットと同じ。`LICENSE` は upstream のリポジトリ直下から、写しに添付するためにここへ移した。

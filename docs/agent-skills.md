@@ -82,9 +82,11 @@ triggers: ["user"]
 
 Devin は同時に有効にできる Skill が1つだけなので、Skill の本文から別の Skill を呼ぶ手順は書かない。本文では Claude 専用の `${CLAUDE_SKILL_DIR}` や、実行時に展開される動的コマンドを使わない。スクリプトを同梱するときは、Skill ディレクトリからの相対パスで書く。
 
-### natural-japanese は upstream の写し
+### natural-japanese は coji の著作を参考にした写し
 
-[coji/natural-japanese](https://github.com/coji/natural-japanese) の `skills/natural-japanese` を、コミット `9a78a42` の時点でこのリポジトリに置いてある。こちらで足したのは `ja` と、リポジトリ直下から移した `LICENSE`。上げ直すときは upstream の同じパスでディレクトリを置き換え、`ja` と `LICENSE` は残す。`scripts/__pycache__` は入れない。`uv` は同梱していない。lint を回す端末では別に入れる。Cursor では `cursor/natural-japanese.mdc` が、日本語の文章の前にこの Skill を読ませる。
+出典は [coji/natural-japanese](https://github.com/coji/natural-japanese)。`skills/natural-japanese` を、コミット `9a78a42` の時点でこのリポジトリに置いてある。著作権は `Copyright (c) 2026 coji`。MIT で、許諾文の全文は `.agents/skills/natural-japanese/LICENSE` にある。写しやその一部を再配布するときは、この著作権表示と `LICENSE` を外さない。人が読む出典は同じディレクトリの `NOTICE`。
+
+このリポジトリで変えたのは `SKILL.md` の `ja` だけ。`LICENSE` は upstream のリポジトリ直下から、写しに添付するために移した。上げ直すときは upstream の同じパスでディレクトリを置き換え、`ja`、`LICENSE`、`NOTICE` は残す。`NOTICE` のコミット番号もそのとき合わせる。`scripts/__pycache__` は入れない。`uv` は同梱していない。lint を回す端末では別に入れる。Cursor では `cursor/natural-japanese.mdc` が、日本語の文章の前にこの Skill を読ませる。このルールの文面はこちらのもので、upstream のファイルではない。
 
 ## そのリポジトリでしか意味がない手順は、そこに置く
 
