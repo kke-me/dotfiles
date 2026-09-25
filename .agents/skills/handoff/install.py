@@ -9,7 +9,7 @@ from pathlib import Path
 
 FILES = Path(__file__).resolve().parent / "files"
 EXCLUDE_LINES = (
-    "/handoff/",
+    "/HANDOFF/",
     ".cursor/rules/handoff.mdc",
     ".cursor/skills/kickoff",
     ".cursor/skills/state",

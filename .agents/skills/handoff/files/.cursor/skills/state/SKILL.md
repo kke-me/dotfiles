@@ -1,17 +1,17 @@
 ---
 name: state
 description: >-
-  Shows or updates handoff/STATE.md, current work and next work only. Use when
+  Shows or updates HANDOFF/STATE.md, current work and next work only. Use when
   the user says /state.
-ja: handoff/STATE.md の今と次だけを表示する。引数があれば次だけをその文に置き換える。/state と言うときに使う。
+ja: HANDOFF/STATE.md の今と次だけを表示する。引数があれば次だけをその文に置き換える。/state と言うときに使う。
 disable-model-invocation: true
 ---
 
 # state
 
-`handoff/STATE.md` だけを扱う。リポジトリ直下や `docs/` には書かない。完了済みは書かない。100 行未満に保つ。`handoff/log.jsonl` は読まない。`AGENTS.md`、スキル、`docs/` にセッションログを書かない。
+`HANDOFF/STATE.md` だけを扱う。リポジトリ直下や `docs/` には書かない。完了済みは書かない。100 行未満に保つ。`HANDOFF/log.jsonl` は読まない。`AGENTS.md`、スキル、`docs/` にセッションログを書かない。
 
-ファイルが無ければ、次の内容で `handoff/STATE.md` を作る。git リポジトリなら `.git/info/exclude` に `/handoff/` を足し、ステージしない。
+ファイルが無ければ、次の内容で `HANDOFF/STATE.md` を作る。git リポジトリなら `.git/info/exclude` に `/HANDOFF/` を足し、ステージしない。
 
 ```markdown
 # 今

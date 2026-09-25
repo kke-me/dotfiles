@@ -1,11 +1,11 @@
 ---
 name: handoff
 description: >-
-  Installs an untracked handoff/ directory into the current git repository.
+  Installs an untracked HANDOFF/ directory into the current git repository.
   It holds STATE.md, BLOCKING.md, HUMAN.md, and log.jsonl, plus the kickoff,
-  state, blocking, and human skills. Lists handoff/ in .git/info/exclude.
+  state, blocking, and human skills. Lists HANDOFF/ in .git/info/exclude.
   Use when the user says /handoff.
-ja: 現在の git リポジトリ直下に、git で追跡しない handoff/ を置く。中身は STATE.md、BLOCKING.md、HUMAN.md、log.jsonl と、kickoff、state、blocking、human のスキル。.git/info/exclude に /handoff/ を足す。/handoff と言うときに使う。
+ja: 現在の git リポジトリ直下に、git で追跡しない HANDOFF/ を置く。中身は STATE.md、BLOCKING.md、HUMAN.md、log.jsonl と、kickoff、state、blocking、human のスキル。.git/info/exclude に /HANDOFF/ を足す。/handoff と言うときに使う。
 disable-model-invocation: true
 triggers: ["user"]
 ---
@@ -14,7 +14,7 @@ triggers: ["user"]
 
 現在の git リポジトリに、手渡し用のディレクトリを置く。既存ファイルは上書きしない。`git add` もコミットもしない。`.gitignore` は変更しない。
 
-置く場所はリポジトリ直下の `handoff/` だけ。中身は `STATE.md`、`BLOCKING.md`、`HUMAN.md`、`log.jsonl`。`docs/` やリポジトリ直下の同名ファイルは作らない。`.git/info/exclude` には `/handoff/` を足す。
+置く場所はリポジトリ直下の `HANDOFF/` だけ。中身は `STATE.md`、`BLOCKING.md`、`HUMAN.md`、`log.jsonl`。`docs/` やリポジトリ直下の同名ファイルは作らない。`.git/info/exclude` には `/HANDOFF/` を足す。
 
 この SKILL.md があるディレクトリで、次を実行する。
 

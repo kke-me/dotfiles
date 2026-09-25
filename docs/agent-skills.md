@@ -32,7 +32,7 @@ readlink ~/.claude/skills
 ls ~/.agents/skills
 ```
 
-Cursor では `/skills` が、この一覧と同じ個人スキルと、今開いているリポジトリのスキルを出す。別のリポジトリへ手渡し用のファイルを置くときは `/handoff` を1回使う。作るのはリポジトリ直下の `handoff/` で、中身は `STATE.md`、`BLOCKING.md`、`HUMAN.md`、`log.jsonl`。`.git/info/exclude` に `/handoff/` を足し、git では追跡しない。`docs/` には置かない。
+Cursor では `/skills` が、この一覧と同じ個人スキルと、今開いているリポジトリのスキルを出す。別のリポジトリへ手渡し用のファイルを置くときは `/handoff` を1回使う。作るのはリポジトリ直下の `HANDOFF/` で、中身は `STATE.md`、`BLOCKING.md`、`HUMAN.md`、`log.jsonl`。`.git/info/exclude` に `/HANDOFF/` を足し、git では追跡しない。`docs/` には置かない。
 
 期待する状態:
 
