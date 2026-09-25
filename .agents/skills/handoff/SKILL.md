@@ -1,10 +1,6 @@
 ---
 name: handoff
-description: >-
-  Installs an untracked handoff/ directory into the current git repository.
-  It holds STATE.md, BLOCKING.md, HUMAN.md, and log.jsonl, plus the kickoff,
-  state, blocking, and human skills. Lists handoff/ in .git/info/exclude.
-  Use when the user says /handoff.
+description: 現在の git リポジトリ直下に、git で追跡しない handoff/ を置く。中身は STATE.md、BLOCKING.md、HUMAN.md、log.jsonl と、kickoff、state、blocking、human のスキル。.git/info/exclude に /handoff/ を足す。/handoff と言うときに使う。
 disable-model-invocation: true
 triggers: ["user"]
 ---

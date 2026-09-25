@@ -1,8 +1,6 @@
 ---
 name: state
-description: >-
-  Shows or updates handoff/STATE.md, current work and next work only. Use when
-  the user says /state.
+description: handoff/STATE.md の今と次だけを表示する。引数があれば次だけをその文に置き換える。/state と言うときに使う。
 disable-model-invocation: true
 ---
 

@@ -1,8 +1,6 @@
 ---
 name: blocking
-description: >-
-  Shows or sets handoff/BLOCKING.md, the barrier that stops the current work.
-  Use when the user says /blocking.
+description: handoff/BLOCKING.md を表示する。引数があればファイル全体をその文に置き換える。/blocking と言うときに使う。
 disable-model-invocation: true
 ---
 

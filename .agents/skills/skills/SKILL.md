@@ -1,8 +1,6 @@
 ---
 name: skills
-description: >-
-  Lists Cursor skills registered for this user and for the current repository.
-  Use when the user says /skills or asks which skills are registered.
+description: このユーザーと、今開いているリポジトリに登録されているスキルを一覧する。/skills と言うとき、または登録済みのスキルを確認したいときに使う。
 disable-model-invocation: true
 triggers: ["user"]
 ---
